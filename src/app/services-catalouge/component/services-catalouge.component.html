@@ -1,0 +1,27 @@
+
+<div class="restaurant-details">
+    <div class="restaurant-header">
+        <h1>{{serviceCatalougeResponse.shop.name}}</h1>
+        <button class="checkout-button" (click)="onCheckOut()">
+            <i class="fas fa-shopping-cart"></i>
+            Checkout
+        </button>
+    </div>
+    <p>{{serviceCatalougeResponse.shop.shopDescription}}</p>
+
+    <h2>Food Menu</h2>
+    <div class="food-list">
+        <div class="food-item" *ngFor="let device of serviceCatalougeResponse.devices">
+            <div class="food-details">
+                <div class="food-name">{{device.deviceName}}</div>
+                <!-- <div class="food-price">&#x20b9; {{device.price}}</div> -->
+            </div>
+            <div class="food-quantity">
+                <button class="minus-button" *ngIf="device.quantity > 0" (click)="decrement(device)">-</button>
+                <div class="quantity-label">{{device.quantity}}</div>
+                <button class="plus-button" (click)="increment(device)">+</button>
+            </div>
+        </div>
+    </div>
+
+</div>

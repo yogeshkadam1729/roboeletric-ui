@@ -1,0 +1,6 @@
+export const API_URL_SL ='http://localhost:9091';
+export const API_URL_Order ='http://localhost:9092';
+
+//shop listing
+export const GET_SHOP_LISTING = API_URL_SL+'/shops/getAllShops';
+
